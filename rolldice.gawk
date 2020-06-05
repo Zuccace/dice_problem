@@ -2,17 +2,17 @@
 
 BEGIN {
 
-	maxdicesize = 1000
-	maxdicemultipler = 50
+	maxdicesize = 20000
+	maxdicemultipler = 100
 	maxrounds = 1000000
 	
-	if (ARGV[1] != "" && ARGV[1] ~ /^[0-9]+$/ && ARGV[1] < maxdicesize) dicesize = ARGV[1]
+	if (ARGV[1] != "" && ARGV[1] ~ /^[0-9]+$/ && ARGV[1] <= maxdicesize) dicesize = ARGV[1]
 	else dicesize = 6
 	
-	if (ARGV[2] != "" && ARGV[2] ~ /^[0-9]+$/ && ARGV[2] < maxdicemultipler) dicemultipler = ARGV[2]
+	if (ARGV[2] != "" && ARGV[2] ~ /^[0-9]+$/ && ARGV[2] <= maxdicemultipler) dicemultipler = ARGV[2]
 	else dicemultipler = 5
 	
-	if (ARGV[3] != "" && ARGV[3] ~ /^[0-9]+$/ && ARGV[3] < maxrounds) totrounds = ARGV[3]
+	if (ARGV[3] != "" && ARGV[3] ~ /^[0-9]+$/ && ARGV[3] <= maxrounds) totrounds = ARGV[3]
 	else totrounds = 25000
 
 	OFS="\t"
